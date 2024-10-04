@@ -5,6 +5,7 @@ const connectdb=require("./config/db")
 const morgan=require("morgan")
 const authRoutes=require("./routes/authRoutes")
 const CategoryRoute=require("./routes/categoryRoutes")
+const productRoutes=require("./routes/productRoutes")
 const cors=require('cors')
 dotenv.config()
 
@@ -13,6 +14,7 @@ app.use(cors())
 app.use(express.json())
 app.use("/api/vi/auth",authRoutes)
 app.use("/api/vi/auth",CategoryRoute)
+app.use("api/vi/auth",productRoutes)
 connectdb()
 
 
